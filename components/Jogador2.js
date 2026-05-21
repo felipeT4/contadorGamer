@@ -9,6 +9,7 @@ import {
   StyleSheet,                // Estilos
   TouchableOpacity          // Botão customizável
 } from 'react-native';
+import Jogador1 from "../App";
 
 // Componente principal APP
 
@@ -18,6 +19,7 @@ export default function App(){
   // setPontos = função para alterar o valor 
   // 0 = valor inicial
   const [pontos,setPontos] = useState(0);
+  const [pontos2,setPontos2] = useState(0);
 
 
 
@@ -40,16 +42,41 @@ export default function App(){
     // volta o valor para 0
     setPontos(0);
   }
-if 
+
+  if 
     (pontos < 0){
       setPontos(0)
     }
-  
+
+/*-------------------------------------------------*/
+  function aumentar2(){
+  // Pega o valor auto e soma +1
+    setPontos2(pontos2+1);
+  }
 
 
+  // Função para diminuir 1 ponto
+  function diminuir2(){
+  // Pega o valor auto e subtrai -1
+    setPontos2(pontos2-1);
+  }
+
+
+ // Função para resetar o contador
+  function resetar2(){
+    // volta o valor para 0
+    setPontos2(0);
+  }
+
+  if 
+    (pontos2 < 0){
+      setPontos2(0)
+    }
   
-    
-  
+/*-----------------------------------------------*/
+
+
+
 
    // tudo que está no RETURN aparece na tela
   return(
@@ -59,8 +86,21 @@ if
       <Text style={styles.titulo}>
         👾 Contador Gamer
       </Text>
+     
+     <View style={styles.t}>
+        </View>
+
+        
+      <Text style={styles.titulo}>
+        Jogador1
+      </Text>
+
+      
+     
       {/* Mostra o valor dos pontos */}
-      <Text style={styles.pontos}>{pontos}</Text>
+      <Text style={styles.pontos}>{pontos}</Text> 
+       <View style={styles.Jogador1}>
+      
       {/* área dos botões +1 e -1 */}
       <View style={styles.areaBotoes}>
        <TouchableOpacity 
@@ -74,18 +114,58 @@ if
        style={styles.botao}>
         <Text style={styles.textoBotao}>-1</Text>
        </TouchableOpacity>
-
-      
       </View>
+      </View>
+
+     
 
       <TouchableOpacity 
        onPress={resetar}
        style={styles.botaoReset}>
         <Text style={styles.textoBotao}>Reset</Text>
        </TouchableOpacity>
+       
+
+{/*-------------------------------------------------------------------------------------------*/}
+   
+      <Text style={styles.pontos}>{pontos2}</Text> 
+      
+     <View style={styles.Jogador2}>
+      {/* área dos botões +1 e -1 */}
+      <View style={styles.areaBotoes}>
+       <TouchableOpacity 
+       onPress={aumentar2}
+       style={styles.botao}>
+        <Text style={styles.textoBotao}>+1</Text>
+       </TouchableOpacity>
+
+       <TouchableOpacity 
+       onPress={diminuir2}
+       style={styles.botao}>
+        <Text style={styles.textoBotao}>-1</Text>
+       </TouchableOpacity>
+        </View>
+        </View>
+    
+     
+
+      <TouchableOpacity 
+       onPress={resetar2}
+       style={styles.botaoReset}>
+        <Text style={styles.textoBotao}>Reset</Text>
+       </TouchableOpacity>
+       
+
+{/*----------------------------------------------------------------------------------------*/}
+
+
+
+
+      
 
     </View>
   );
+
  }
 
 
@@ -93,7 +173,8 @@ if
  const styles = StyleSheet.create({
   // ESTILO DA TELA PRINCIPAL
   container:{
-    // OCUPA A TELA TODA 
+    // OCUPA A TELA TODA
+     
     flex:1,
     // COR DE FUNDO
     backgroundColor:'#002d4fff',
@@ -104,6 +185,16 @@ if
     // ESPAÇAMENTO INTERNO
     padding:20,
   },
+  t:{
+    flexDirection: 'row'
+  },
+  Jogador1:{
+    flexDirection: 'column',
+  },
+    Jogador2:{
+    flexDirection: 'column',
+  },
+
 
    // ESTILO DO TÍTULO
   titulo:{
@@ -139,7 +230,7 @@ if
    // ESTILOS DOS BOTÕES +1 E -1
  botao:{
    // COR DO BOTÃO 
-  backgroundColor:'#00ff88',
+  backgroundColor:'#41de4cff',
    // ESPAÇAMENTO VERTICAL
   paddingVertical:15,
    // ESPAÇAMENTO HORIZONTAL
@@ -153,7 +244,7 @@ if
  //ESTILO DO BOTÃO RESETAR
  botaoReset:{
   // COR VERMELHA
-  backgroundColor:'#ff3b30',
+  backgroundColor:'#d40b00ff',
   // ESPAÇAMENTOS
   paddingVertical:15,
   paddingHorizontal:40,
@@ -166,7 +257,7 @@ if
   // TAMANHO DA LETRA
   fontSize:22,
   // COR DO TEXTO
-  color:'#000',
+  color:'#181818ff',
   // NEGRITO
   fontWeight:'bold',
 

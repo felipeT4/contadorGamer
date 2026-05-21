@@ -9,6 +9,7 @@ import {
   StyleSheet,                // Estilos
   TouchableOpacity          // Botão customizável
 } from 'react-native';
+import Jogador1 from "../App";
 
 // Componente principal APP
 
@@ -18,6 +19,8 @@ export default function App(){
   // setPontos = função para alterar o valor 
   // 0 = valor inicial
   const [pontos,setPontos] = useState(0);
+  const [pontos2,setPontos2] = useState(0);
+  const [pontos3,setPontos3] = useState(0);
 
 
 
@@ -40,16 +43,89 @@ export default function App(){
     // volta o valor para 0
     setPontos(0);
   }
-if 
+
+  if 
     (pontos < 0){
       setPontos(0)
     }
-  
+
+/*-------------------------------------------------*/
+  function aumentar2(){
+  // Pega o valor auto e soma +1
+    setPontos2(pontos2+1);
+  }
 
 
+  // Função para diminuir 1 ponto
+  function diminuir2(){
+  // Pega o valor auto e subtrai -1
+    setPontos2(pontos2-1);
+  }
+
+
+ // Função para resetar o contador
+  function resetar2(){
+    // volta o valor para 0
+    setPontos2(0);
+  }
+
+  if 
+    (pontos2 < 0){
+      setPontos2(0)
+    }
   
-    
+
+/*-------------------------------------------------*/
+
+function aumentar2(){
+  // Pega o valor auto e soma +1
+    setPontos2(pontos2+1);
+  }
+
+
+  // Função para diminuir 1 ponto
+  function diminuir2(){
+  // Pega o valor auto e subtrai -1
+    setPontos2(pontos2-1);
+  }
+
+
+ // Função para resetar o contador
+  function resetar2(){
+    // volta o valor para 0
+    setPontos2(0);
+  }
+
+  if 
+    (pontos2 < 0){
+      setPontos2(0)
+    }
   
+/*-------------------------------------------------*/
+
+function aumentar3(){
+  // Pega o valor auto e soma +1
+    setPontos3(pontos3+1);
+  }
+
+
+  // Função para diminuir 1 ponto
+  function diminuir3(){
+  // Pega o valor auto e subtrai -1
+    setPontos3(pontos3-1);
+  }
+
+
+ // Função para resetar o contador
+  function resetar3(){
+    // volta o valor para 0
+    setPontos3(0);
+  }
+
+  if 
+    (pontos3 < 0){
+      setPontos3(0)
+    }
 
    // tudo que está no RETURN aparece na tela
   return(
@@ -59,8 +135,13 @@ if
       <Text style={styles.titulo}>
         👾 Contador Gamer
       </Text>
+      <Text style={styles.titulo}>
+        Jogador1
+      </Text>
       {/* Mostra o valor dos pontos */}
-      <Text style={styles.pontos}>{pontos}</Text>
+      <Text style={styles.pontos}>{pontos}</Text> 
+      
+      
       {/* área dos botões +1 e -1 */}
       <View style={styles.areaBotoes}>
        <TouchableOpacity 
@@ -75,7 +156,6 @@ if
         <Text style={styles.textoBotao}>-1</Text>
        </TouchableOpacity>
 
-      
       </View>
 
       <TouchableOpacity 
@@ -84,8 +164,67 @@ if
         <Text style={styles.textoBotao}>Reset</Text>
        </TouchableOpacity>
 
+{/* ------------------------------------------------------------------------ */}
+      
+      <Text style={styles.pontos}>{pontos2}</Text> 
+      
+      
+      {/* área dos botões +1 e -1 */}
+      <View style={styles.areaBotoes}>
+       <TouchableOpacity 
+       onPress={aumentar2}
+       style={styles.botao}>
+        <Text style={styles.textoBotao}>+1</Text>
+       </TouchableOpacity>
+
+       <TouchableOpacity 
+       onPress={diminuir2}
+       style={styles.botao}>
+        <Text style={styles.textoBotao}>-1</Text>
+       </TouchableOpacity>
+
+      </View>
+
+      <TouchableOpacity 
+       onPress={resetar2}
+       style={styles.botaoReset}>
+        <Text style={styles.textoBotao}>Reset</Text>
+       </TouchableOpacity>
+
+{/* ------------------------------------------------------------------------ */}
+
+      <Text style={styles.pontos}>{pontos3}</Text> 
+      
+      
+      {/* área dos botões +1 e -1 */}
+      <View style={styles.areaBotoes}>
+       <TouchableOpacity 
+       onPress={aumentar3}
+       style={styles.botao}>
+        <Text style={styles.textoBotao}>+1</Text>
+       </TouchableOpacity>
+
+       <TouchableOpacity 
+       onPress={diminuir3}
+       style={styles.botao}>
+        <Text style={styles.textoBotao}>-1</Text>
+       </TouchableOpacity>
+
+      </View>
+
+      <TouchableOpacity 
+       onPress={resetar3}
+       style={styles.botaoReset}>
+        <Text style={styles.textoBotao}>Reset</Text>
+       </TouchableOpacity>
+
+{/* ------------------------------------------------------------------------ */}
+
+      
+
     </View>
   );
+
  }
 
 
@@ -105,12 +244,13 @@ if
     padding:20,
   },
 
+
    // ESTILO DO TÍTULO
   titulo:{
     // TAMANHO DA FONTE
     fontSize:32,
     // COR DO TEXTO
-    color:'#00a6ffff',
+    color:'#2f51a0ff',
     // TEXTO EM NEGRITO
     fontWeight:'bold',
     // ESPAÇO ABAIXO
@@ -139,7 +279,7 @@ if
    // ESTILOS DOS BOTÕES +1 E -1
  botao:{
    // COR DO BOTÃO 
-  backgroundColor:'#00ff88',
+  backgroundColor:'#41de4cff',
    // ESPAÇAMENTO VERTICAL
   paddingVertical:15,
    // ESPAÇAMENTO HORIZONTAL
@@ -153,7 +293,7 @@ if
  //ESTILO DO BOTÃO RESETAR
  botaoReset:{
   // COR VERMELHA
-  backgroundColor:'#ff3b30',
+  backgroundColor:'#d40b00ff',
   // ESPAÇAMENTOS
   paddingVertical:15,
   paddingHorizontal:40,
